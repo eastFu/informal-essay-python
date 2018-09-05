@@ -40,20 +40,23 @@ class CutPicture():
 
     # 保存
     @staticmethod
-    def save_images(img):
+    def save_images(img, out_path):
         index = 1
         for image in img:
-            image.save('e://cut/result/python'+str(index) + '.png', 'PNG')
+            out_name = out_path+'/cut-'+str(index) + '.png'
+            image.save(out_name, 'PNG')
+            print "save img : %s" % out_name
             index += 1
 
     @staticmethod
-    def cut_and_save(img_path):
-        print "start : img path : %s"%img_path
-        img = CutPicture.fill_image( Image.open(img_path))
+    def cut_and_save(img_path, out_path):
+        print "start :  %s" % img_path
+        img = CutPicture.fill_image(Image.open(img_path))
         img = CutPicture.cut_image(img)
-        CutPicture.save_images(img)
+        CutPicture.save_images(img, out_path)
         print "end : cut picture success"
 
 if __name__ == '__main__':
-    file_path = "e://cut/java.jpg"
-    CutPicture.cut_and_save(file_path)
+    file_path = "e://cut/py.jpg"
+    out_path = "e://cut/result"
+    CutPicture.cut_and_save(file_path, out_path)

@@ -13,5 +13,7 @@ python 随笔练习
         PIL: pip3 install pillow
 
 * 源代码目录：/cut-picture
+* 效果图
+![效果图](https://raw.github.com/eastFu/docs/master/informal-easy-python/cut-picture/cut-picture.png)
 
 #### 二、
